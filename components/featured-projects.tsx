@@ -107,7 +107,7 @@ const projects = [
       "Tailwind CSS",
       "Framer Motion"
     ],
-    codeUrl: "https://github.com/ShreyaGupta2025/",
+    codeUrl: "https://github.com/ShreyaGupta2025/shreya-portfolio",
     outcome:
       "Delivered a scalable and maintainable portfolio platform that effectively communicates technical depth, system thinking, and project impact through a polished frontend experience."
   }
