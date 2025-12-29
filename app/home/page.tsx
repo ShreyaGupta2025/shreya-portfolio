@@ -18,7 +18,6 @@ export default function Home() {
 
   return (
     <>
-      {/* MAIN SITE */}
       <main
         className={`
           min-h-screen bg-background text-foreground
@@ -37,7 +36,6 @@ export default function Home() {
         <Footer />
       </main>
 
-      {/* INTRO OVERLAY */}
       {showIntro && (
         <IntroAnimation onFinish={() => setShowIntro(false)} />
       )}
