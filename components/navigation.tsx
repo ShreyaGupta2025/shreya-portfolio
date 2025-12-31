@@ -42,7 +42,7 @@ export default function Navigation() {
     return () => observer.disconnect()
   }, [])
 
-  /* ⬆️ TOP DETECTION (THIS FIXES YOUR BUG) */
+  /* ⬆️ TOP DETECTION */
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY < 80) {
@@ -56,14 +56,15 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="w-full px-6 md:px-10 lg:px-16 py-4 flex items-center">
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 py-3 md:py-4 flex items-center">
 
         {/* LEFT */}
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-8">
           <Link href="/" className="text-2xl font-bold text-primary">
             SG
           </Link>
 
+          {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-6">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id
@@ -83,7 +84,7 @@ export default function Navigation() {
                 >
                   {item.label}
 
-                  {/* 🔴 Active underline */}
+                  {/* Active underline */}
                   <span
                     className={`
                       absolute left-0 -bottom-1 h-[2px] w-full bg-primary
@@ -99,14 +100,14 @@ export default function Navigation() {
         </div>
 
         {/* RIGHT */}
-        <div className="ml-auto flex items-center gap-4">
+        <div className="ml-auto flex items-center gap-3 sm:gap-4">
           <a
             href="https://github.com/ShreyaGupta2025"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Github size={20} />
+            <Github size={18} />
           </a>
 
           <a
@@ -115,15 +116,15 @@ export default function Navigation() {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Linkedin size={20} />
+            <Linkedin size={18} />
           </a>
 
           <a
             href="/resume.pdf"
-            className="px-4 py-2 border border-primary text-primary text-sm font-medium rounded hover:bg-primary/10 transition-colors flex items-center gap-2"
+            className="px-3 sm:px-4 py-2 border border-primary text-primary text-sm font-medium rounded hover:bg-primary/10 transition-colors flex items-center gap-2"
           >
             <FileText size={16} />
-            Resume
+            <span className="hidden sm:inline">Resume</span>
           </a>
         </div>
       </div>

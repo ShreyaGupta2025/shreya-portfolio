@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import IntroAnimation from "@/components/intro-animation"
-import Home from "@/app/home/page"
+import Home from "@/app/page"
 
 export default function IntroWrapper() {
   const [showIntro, setShowIntro] = useState(true)
