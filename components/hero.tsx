@@ -23,7 +23,6 @@ export default function Hero() {
 
       {/* 🎥 MOBILE VIDEO */}
       <video
-
         autoPlay
         loop
         muted
@@ -45,7 +44,11 @@ export default function Hero() {
 
       {/* 🧠 CONTENT */}
       <div className="relative z-10 min-h-screen flex items-center pt-32 sm:pt-24">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+        
+        {/* ⬅️ REMOVED mx-auto & max-w-6xl */}
+        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
+          
+          {/* ⬅️ Text block now naturally sits left */}
           <div className="space-y-6 max-w-2xl">
             
             {/* Portfolio + Name */}
