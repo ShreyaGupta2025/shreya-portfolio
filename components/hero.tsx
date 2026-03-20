@@ -4,51 +4,39 @@ import { Mail, Github, Linkedin, FileText } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-background">
+    <section className="relative w-full h-[100dvh] overflow-hidden bg-background">
       
-      {/* 🎥 DESKTOP VIDEO */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="
-          absolute inset-0 w-full h-full object-cover brightness-75
-          hidden md:block
-        "
-      >
-        <source src="/bv5.mp4" type="video/mp4" />
-      </video>
+      {/* 🎥 VIDEO LAYER */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover brightness-75"
+        >
+          <source src="/bv5.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-      {/* 🎥 MOBILE VIDEO */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="
-          absolute inset-0 w-full h-full object-cover brightness-75
-          block md:hidden
-        "
-      >
-        <source src="/bv5.mp4" type="video/mp4" />
-      </video>
+      {/* 🌑 DARK OVERLAY (Sits right on top of video) */}
+      <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-      {/* 🌑 Dark overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* 🌫️ RIGHT SIDE FADE (Identical style to your bottom fade) */}
+      <div 
+        className="absolute inset-y-0 right-0 w-1/3 z-[2] pointer-events-none bg-gradient-to-r from-transparent to-background"
+        style={{ marginRight: "-1px" }} 
+      />
 
-      {/* 🌫️ Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-background" />
+      {/* 🌫️ BOTTOM FADE */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 z-[2] bg-gradient-to-b from-transparent to-background" />
 
-      {/* 🧠 CONTENT */}
-      <div className="relative z-10 min-h-screen flex items-center pt-32 sm:pt-24">
+      {/* 🧠 CONTENT LAYER */}
+      <div className="relative z-10 h-full flex items-center pt-20 sm:pt-0">
         
-        {/* ⬅️ REMOVED mx-auto & max-w-6xl */}
-        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
+        <div className="w-full px-6 md:px-10 lg:px-16">
           
-          {/* ⬅️ Text block now naturally sits left */}
           <div className="space-y-6 max-w-2xl">
             
             {/* Portfolio + Name */}
@@ -79,6 +67,8 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3 pt-4">
               <a
                 href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 sm:px-6 py-3 border border-white/60 text-white rounded font-medium hover:bg-white/10 transition flex items-center gap-2"
               >
                 <FileText size={18} />
@@ -87,6 +77,8 @@ export default function Hero() {
 
               <a
                 href="https://github.com/ShreyaGupta2025"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 sm:px-6 py-3 border border-white/60 text-white rounded font-medium hover:bg-white/10 transition flex items-center gap-2"
               >
                 <Github size={18} />
@@ -95,6 +87,8 @@ export default function Hero() {
 
               <a
                 href="https://www.linkedin.com/in/shreyagupta2005/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 sm:px-6 py-3 border border-white/60 text-white rounded font-medium hover:bg-white/10 transition flex items-center gap-2"
               >
                 <Linkedin size={18} />

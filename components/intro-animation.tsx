@@ -36,41 +36,36 @@ export default function IntroAnimation({
 
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
-    {/* 🖤 BLACK BACKGROUND — true base */}
-    <div
-      className={`absolute inset-0 bg-black transition-opacity duration-[1400ms] z-0
-        ${fadeBg ? "opacity-0" : "opacity-100"}
-      `}
-    />
-
-    {/* 🌌 PARTICLES — ABOVE BLACK */}
-    <div
-  className={`
-    absolute inset-0 z-0
-    transition-opacity duration-[1400ms] ease-out
-    ${fadeBg ? "opacity-0" : "opacity-100"}
-  `}
->
-  <GlobalParticles />
-</div>
-
-
-
-    {/* 🎬 INTRO CONTENT */}
-    <div
-      className={`relative z-20 h-full flex items-center justify-center
-        transition-opacity duration-[900ms]
-        ${fadeText ? "opacity-0" : "opacity-100"}
-      `}
-    >
-
       
-        <div className="flex flex-col items-center gap-12">
+      {/* 🖤 BLACK BACKGROUND */}
+      <div
+        className={`absolute inset-0 bg-black transition-opacity duration-[1400ms] z-0
+          ${fadeBg ? "opacity-0" : "opacity-100"}
+        `}
+      />
+
+      {/* 🌌 PARTICLES */}
+      <div
+        className={`absolute inset-0 z-0 transition-opacity duration-[1400ms] ease-out
+          ${fadeBg ? "opacity-0" : "opacity-100"}
+        `}
+      >
+        <GlobalParticles />
+      </div>
+
+      {/* 🎬 INTRO CONTENT */}
+      <div
+        className={`relative z-20 h-[100dvh] flex items-center justify-center px-4
+          transition-opacity duration-[900ms]
+          ${fadeText ? "opacity-0" : "opacity-100"}
+        `}
+      >
+        <div className="flex flex-col items-center gap-8 sm:gap-12">
 
           {/* NAME */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden max-w-[90vw]">
             <h1
-              className="text-[6rem] tracking-[0.08em]"
+              className="text-[clamp(2.2rem,10vw,6rem)] tracking-[0.08em] text-center"
               style={{
                 color: "#e50914",
                 fontFamily:
@@ -91,7 +86,8 @@ export default function IntroAnimation({
           </div>
 
           {/* RED LINE */}
-          <div className="relative w-[520px] h-[28px] flex items-center justify-center">
+          <div className="relative w-[80vw] max-w-[520px] h-[28px] flex items-center justify-center">
+            
             {/* Glow */}
             <div
               className={`absolute h-[6px] transition-all duration-[900ms]
@@ -123,8 +119,8 @@ export default function IntroAnimation({
 
           {/* PORTFOLIO */}
           <p
-            className={`text-4xl tracking-[0.35em] transition-all duration-[900ms]
-              ${showPortfolio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+            className={`text-[clamp(1rem,5vw,2rem)] tracking-[0.35em] text-center transition-all duration-[900ms]
+              ${showPortfolio ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[3vh]"}
             `}
             style={{
               color: "#ffffff",
@@ -169,5 +165,3 @@ export default function IntroAnimation({
     </div>
   )
 }
-
-
